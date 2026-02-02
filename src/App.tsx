@@ -1,9 +1,17 @@
-
+import { useState, useEffect } from "react"
+import type Todo from "./interfaces/Todo"
 
 function App() {
+  const [todos, setTodos] = useState<Todo[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+
   return (
     <>
-      <h1>Att göra-lista</h1>
+    <main>
+    <h1>Att göra-lista</h1>
+
+    </main>
     </>
   )
 }
