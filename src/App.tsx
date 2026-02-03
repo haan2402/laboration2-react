@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import type Todo from "./interfaces/Todo"
 import { Todos } from "./components/Todos";
+import { TodoForm } from "./components/TodoForm";
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);           //state som lagrar listan med todos
@@ -44,6 +45,9 @@ function App() {
     {todos.map((todo) => (
       <Todos key={todo._id} todo={todo} todoStatusUpdated={getTodos} /> 
      ))}
+  <br />
+     <h2>Lägg till ny</h2>
+     <TodoForm todoCreated={getTodos} />
     </main>
     </>
   )
