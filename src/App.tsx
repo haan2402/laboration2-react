@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import type Todo from "./interfaces/Todo"
+import { Todos } from "./components/Todos";
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);           //state som lagrar listan med todos
@@ -39,6 +40,10 @@ function App() {
     <h1>Att göra-lista</h1>
     {error && <p>{error}</p>}
     {loading && <p>Laddar in data...</p>}
+
+    {todos.map((todo) => (
+      <Todos key={todo._id} todo={todo} todoStatusUpdated={getTodos} /> 
+     ))}
     </main>
     </>
   )
