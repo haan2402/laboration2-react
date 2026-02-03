@@ -33,6 +33,23 @@ export const Todos = ({todo, todoStatusUpdated} : {todo: Todo, todoStatusUpdated
         }
     }
 
+    //DELETE-anrop för att kunna radera en todo
+    const deleteTodo = async () =>{
+        try {
+            const respone = await fetch("http://localhost:5000/todos/" + todo._id, {
+                method: "DELETE",
+        });
+
+        //om uppdateringen är ok, hämtas listan på nytt i App.tsx
+        if(respone.ok) {
+            todoStatusUpdated();
+        }
+
+        } catch(error) {
+            console.log("Det gick inte att radera todo..", error);
+        }
+    }
+
   return (
     <section>
         <h2>{todo.title}</h2>
@@ -50,6 +67,8 @@ export const Todos = ({todo, todoStatusUpdated} : {todo: Todo, todoStatusUpdated
             <option>Avklarad</option>
             </select>
         </form>
+
+        <button onClick={deleteTodo}>Radera</button>
     </section>
   )
 }
