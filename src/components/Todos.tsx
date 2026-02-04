@@ -1,4 +1,5 @@
 import type Todo from "../interfaces/Todo";
+import "./Todo.css"
 
 export const Todos = ({todo, todoStatusUpdated} : {todo: Todo, todoStatusUpdated : Function}) => {
 
@@ -51,13 +52,14 @@ export const Todos = ({todo, todoStatusUpdated} : {todo: Todo, todoStatusUpdated
     }
 
   return (
-    <section>
+    <section className="todo-container">
+        <div className="todo-content">
         <h2>{todo.title}</h2>
         <p>{todo.description}</p>
-        <p style={{color: colourStatus}}>{todo.status}</p>
+        <p className="todo-status" style={{color: colourStatus}}>{todo.status}</p>
 
         <form>
-            <label htmlFor="status">Ändra status:</label>
+            <label htmlFor="status">Ändra status: </label>
 
             <select name="status" id="status" defaultValue={todo.status}
             onChange={updateStatus}>
@@ -67,8 +69,9 @@ export const Todos = ({todo, todoStatusUpdated} : {todo: Todo, todoStatusUpdated
             <option>Avklarad</option>
             </select>
         </form>
+        </div>
 
-        <button onClick={deleteTodo}>Radera</button>
+        <button className="delete-btn" onClick={deleteTodo}>Radera</button>
     </section>
   )
 }

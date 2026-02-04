@@ -1,0 +1,53 @@
+/*styling för todo komponent*/
+.todo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 2px solid #ccc;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.todo-content {
+    flex: 1;
+}
+
+.todo-container h2 {
+    margin: 0 0 15px 0;
+}
+
+.todo-container p {
+    margin: 0 0 15px 0;
+}
+
+
+.todo-status {
+    font-weight: bold;
+    display: inline-block;
+    margin: 0 0 15px 0;
+
+}
+
+select {
+    margin-top: 1em;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.delete-btn {
+    padding: 10px 15px;
+    background-color: rgb(211, 0, 42);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.delete-btn:hover {
+    background-color: rgb(138, 3, 3);
+}
