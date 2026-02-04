@@ -15,8 +15,8 @@
 .form-todo input[type="text"],
 .form-todo select {
     width: 100%;
-    padding: 8px 10px;
-    margin-bottom: 15px;
+    padding: 10px 12px;
+    margin-bottom: 30px;
     border-radius: 6px;
     border: 1px solid #ccc;
 }
