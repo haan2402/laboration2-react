@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "./TodoForm.css"
 
 //formulär för att skapa nya todos
 export const TodoForm = ({todoCreated} : {todoCreated : Function}) => {
@@ -75,7 +76,7 @@ export const TodoForm = ({todoCreated} : {todoCreated : Function}) => {
 
     //formulär data skickas till backend API för att skapa en ny todo, valideringmeddelande för namn och beskrivning
   return (
-    <form onSubmit={formSubmit}>
+    <form onSubmit={formSubmit} className="form-todo">
         <label htmlFor="title">Titel</label>
         <input type="text" name="title" id="title" value={formData.title} 
         onChange={(event) => setFormData({...formData, title: event.target.value})}/>

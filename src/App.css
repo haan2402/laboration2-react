@@ -1,0 +1,35 @@
+/*styling för app.tsx*/
+.app-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.app-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    justify-items: center;
+}
+
+.todo-list {
+    width: 100%;
+}
+
+.todo-form {
+    width: 100%;
+    max-width: 600px;
+}
+
+@media (min-width: 768px) {
+    .app-layout {
+        display: flex;
+        gap: 30px;
+    }
+
+}

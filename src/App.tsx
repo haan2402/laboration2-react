@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
 import type Todo from "./interfaces/Todo"
-import { Todos } from "./components/Todos";
-import { TodoForm } from "./components/TodoForm";
+import { Todos } from "./components/Todos"
+import { TodoForm } from "./components/TodoForm"
+import "./App.css"
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);           //state som lagrar listan med todos
@@ -37,17 +38,23 @@ function App() {
 
   return (
     <>
-    <main>
+    <main className="app-container">
     <h1>Att göra-lista</h1>
     {error && <p>{error}</p>}
     {loading && <p>Laddar in data...</p>}
 
+    <div className="app-layout">
+    <section className="todo-list">
     {todos.map((todo) => (
       <Todos key={todo._id} todo={todo} todoStatusUpdated={getTodos} /> 
      ))}
-  <br />
+     </section>
+    <br />
+    <section className="todo-form">
      <h2>Lägg till ny</h2>
      <TodoForm todoCreated={getTodos} />
+     </section>
+     </div>
     </main>
     </>
   )
