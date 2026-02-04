@@ -16,6 +16,12 @@ Följande tekniker används för denna uppgift:
 - CSS
 - Fetch API
 
+## Struktur
+Applikationen är uppdelad i olika komponenter:
+- **App** - huvudkomponent som ansvarar för API-anrop och state
+- **Todos** - visar en todo och hanterar ändring av statusen
+- **TodoForm** - ett formulär för att skapa nya todos
+
 ## Validering
 Validering av data sker både i frontend och backend.
 
