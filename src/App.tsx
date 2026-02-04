@@ -39,23 +39,26 @@ function App() {
   return (
     <>
     <main className="app-container">
-    <h1>Att göra-lista</h1>
-    {error && <p>{error}</p>}
-    {loading && <p>Laddar in data...</p>}
+      <div className="app-layout">
+        <section className="todo-list">
+          <h1>Att göra-lista</h1>
+            {error && <p>{error}</p>}
+            {loading && <p>Laddar in data...</p>}
 
-    <div className="app-layout">
-    <section className="todo-list">
-    {todos.map((todo) => (
-      <Todos key={todo._id} todo={todo} todoStatusUpdated={getTodos} /> 
-     ))}
-     </section>
-    <br />
-    <section className="todo-form">
-     <h2>Lägg till ny</h2>
-     <TodoForm todoCreated={getTodos} />
-     </section>
-     </div>
-    </main>
+            {todos.map((todo) => (
+            <Todos key={todo._id} todo={todo} todoStatusUpdated={getTodos} /> 
+            ))}
+        </section>
+
+     <br />
+
+        <section className="todo-form">
+          <h2>Lägg till ny</h2>
+          <TodoForm todoCreated={getTodos} />
+        </section>
+    
+    </div>
+  </main>
     </>
   )
 }

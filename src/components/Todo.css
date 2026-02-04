@@ -18,12 +18,12 @@
 
 .todo-container h2 {
     margin: 0 0 15px 0;
+    font-size: 1.2em;
 }
 
 .todo-container p {
     margin: 0 0 15px 0;
 }
-
 
 .todo-status {
     font-weight: bold;
@@ -32,11 +32,17 @@
 
 }
 
+.todo-container label {
+    font-weight: bold;
+}
+
 .todo-container select {
     margin-top: 1em;
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background-color: #ececec;
+    font-size: 0.9em;
 }
 
 .delete-btn {
@@ -47,6 +53,8 @@
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    align-self: flex-start;
+    margin-left: 15px;
 }
 
 .delete-btn:hover {
